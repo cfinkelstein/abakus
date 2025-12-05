@@ -2,6 +2,11 @@
 
 An interactive educational web application that helps children learn basic arithmetic through a virtual abacus (counting tool). The application presents random addition problems and provides an engaging, visual way to practice mental math using the traditional abacus method.
 
+[https://abakus.myownlab.de](https://abakus.myownlab.de)
+
+<img width="815" height="413" alt="abakus" src="https://github.com/user-attachments/assets/7129f88c-d80e-4e97-9648-6fd71dd7e825" />
+
+
 ## Purpose
 
 Abakus is designed to make learning addition fun and intuitive for young learners. By manipulating virtual beads on a digital abacus, students can:
