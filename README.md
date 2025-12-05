@@ -123,4 +123,4 @@ src/
 
 ## License
 
-This project is private and not licensed for public distribution.
+This project lives under the MIT License. See the [LICENSE](LICENSE) file for details.
