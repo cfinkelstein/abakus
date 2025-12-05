@@ -1,0 +1,40 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background -->
+  <rect x="0" y="0" width="512" height="512" fill="#5c849c" />
+
+  <!-- Abacus frame -->
+  <!-- Vertical posts -->
+  <rect x="40" y="40" width="36" height="432" rx="14" fill="#f0e3ec" />
+  <rect x="436" y="40" width="36" height="432" rx="14" fill="#f0e3ec" />
+
+  <!-- Bottom bar -->
+  <rect x="28" y="432" width="456" height="50" rx="20" fill="#f0e3ec" />
+
+  <!-- Rods -->
+  <rect x="76" y="143" width="360" height="14" rx="7" fill="#343d44" />
+  <rect x="76" y="256" width="360" height="14" rx="7" fill="#343d44" />
+  <rect x="76" y="369" width="360" height="14" rx="7" fill="#343d44" />
+
+  <!-- Beads: top row -->
+  <circle cx="123" cy="150" r="28" fill="#202d4d" />
+  <circle cx="211" cy="150" r="28" fill="#202d4d" />
+  <circle cx="299" cy="150" r="28" fill="#c9ada9" />
+  <circle cx="387" cy="150" r="28" fill="#c9ada9" />
+
+  <!-- Beads: middle row -->
+  <circle cx="123" cy="263" r="28" fill="#202d4d" />
+  <circle cx="211" cy="263" r="28" fill="#202d4d" />
+  <circle cx="299" cy="263" r="28" fill="#c9ada9" />
+  <circle cx="387" cy="263" r="28" fill="#c9ada9" />
+
+  <!-- Beads: bottom row -->
+  <circle cx="123" cy="376" r="28" fill="#202d4d" />
+  <circle cx="211" cy="376" r="28" fill="#202d4d" />
+  <circle cx="299" cy="376" r="28" fill="#c9ada9" />
+  <circle cx="387" cy="376" r="28" fill="#c9ada9" />
+</svg>
