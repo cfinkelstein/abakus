@@ -23,7 +23,6 @@
 	
 	function handleClick() {
 		playClickSound();
-		//rowItem.selected = !rowItem.selected;
 		rowItem.callback();
 	}
 </script>
@@ -50,14 +49,12 @@
 	@keyframes pulse {
 		0%, 100% {
 			transform: scale(1);
-			/*box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);*/
 		}
 		50% {
 			transform: scale(0.85);
-			/*box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);*/
 		}
 	}
-	
+
 	.hint-pulse {
 		animation: pulse 1.5s ease-in-out infinite;
 	}
