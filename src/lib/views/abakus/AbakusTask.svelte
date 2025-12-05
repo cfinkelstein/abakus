@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { text } from "@sveltejs/kit";
 	import type { AbakusTask } from "./abakus.ts";
     export let task: AbakusTask;
 
@@ -42,10 +41,8 @@ let previousCorrect = false;
 </script>
 
 <div class="p-3 md:p-6">
-    <!--<p class="text-sm font-medium text-indigo-600 mb-2">Solve this:</p>-->
     <p class="md:text-6xl text-4xl font-bold bg-clip-text text-light">
-        {task.terms.join(' + ')} 
-        <!--<span class="text-dark">{@html  task.actual === task.expected || task.actual === 0 ? ' = ' : ' &ne; '}</span> -->
+        {task.terms.join(' + ')}
        &nbsp;<span class="text-black">=</span>&nbsp;
         <span class="{task.actual === task.expected ? 'text-green-600' : 'text-light'}">
             {#if task.actual > task.expected}
@@ -54,8 +51,7 @@ let previousCorrect = false;
                 <span class="text-navy underline">{task.actual}</span> + {task.expected - task.actual}
             {:else}
                 {task.actual > 0 ? task.actual : '?'}
-            {/if}        
+            {/if}
         </span>
     </p>
-</div> 
-
+</div>
