@@ -12,5 +12,3 @@
 <div class="min-h-screen bg-bluegray flex justify-center">
 	{@render children()}
 </div>
-
-  
