@@ -1,26 +1,10 @@
 <script lang="ts">
 	import type { AbakusRowItem } from "./abakus.ts";
-	export let rowItem: AbakusRowItem;
-	export let enabled: Boolean;
-	
-	function playClickSound() {
-		const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-		const oscillator = audioContext.createOscillator();
-		const gainNode = audioContext.createGain();
-		
-		oscillator.connect(gainNode);
-		gainNode.connect(audioContext.destination);
-		
-		oscillator.frequency.value = 800;
-		oscillator.type = 'sine';
-		
-		gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-		gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-		
-		oscillator.start(audioContext.currentTime);
-		oscillator.stop(audioContext.currentTime + 0.1);
-	}
-	
+	import { playClickSound } from "$lib/audio";
+	import { ABACUS_CONFIG } from "./constants";
+
+	let { rowItem, enabled }: { rowItem: AbakusRowItem; enabled: boolean } = $props();
+
 	function handleClick() {
 		playClickSound();
 		rowItem.callback();
@@ -31,12 +15,12 @@
 	<button
 	onclick={() => handleClick()}
 	class="md:w-12 md:h-12 w-7 h-7 rounded-full transition-all hover:scale-105 active:scale-95
-		{rowItem.selected ? 
-			(rowItem.nr <= 5
+		{rowItem.selected ?
+			(rowItem.nr <= ABACUS_CONFIG.COLOR_SPLIT_THRESHOLD
 				? 'bg-gradient-to-br from-red-500 to-red-600 shadow-lg hover:shadow-xl'
 				: 'bg-gradient-to-br from-green-500 to-green-600 shadow-lg hover:shadow-xl')
-			: 
-			(rowItem.nr <= 5
+			:
+			(rowItem.nr <= ABACUS_CONFIG.COLOR_SPLIT_THRESHOLD
 				? 'bg-gradient-to-br from-red-300 to-red-400 opacity-40 shadow-md hover:shadow-lg'
 				: 'bg-gradient-to-br from-green-300 to-green-400 opacity-40 shadow-md hover:shadow-lg')
 		}

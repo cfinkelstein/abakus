@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { AbakusData } from "./abakus.ts";
-    import AbakusRow from "./AbakusRow.svelte";
-	export let data: AbakusData;
+	import AbakusRow from "./AbakusRow.svelte";
+
+	let { data }: { data: AbakusData } = $props();
 </script>
 
 
