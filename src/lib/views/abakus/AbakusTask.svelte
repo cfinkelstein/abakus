@@ -1,43 +1,19 @@
 <script lang="ts">
 	import type { AbakusTask } from "./abakus.ts";
-    export let task: AbakusTask;
+	import { playSuccessSound } from "$lib/audio";
 
-let previousCorrect = false;
-    
-    function playSuccessSound() {
-        const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
-        
-        // Play a cheerful ascending chord
-        const frequencies = [523.25, 659.25, 783.99]; // C5, E5, G5
-        
-        frequencies.forEach((freq, index) => {
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.value = freq;
-            oscillator.type = 'sine';
-            
-            const startTime = audioContext.currentTime + (index * 0.1);
-            gainNode.gain.setValueAtTime(0.2, startTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
-            
-            oscillator.start(startTime);
-            oscillator.stop(startTime + 0.3);
-        });
-    }
-    
-    $: isCorrect = task.expected === task.actual;
-    
-    $: {
-        if (isCorrect && !previousCorrect) {
-            playSuccessSound();
-        }
-        previousCorrect = isCorrect;
-    }
+	export let task: AbakusTask;
 
+	let previousCorrect = false;
+
+	$: isCorrect = task.expected === task.actual;
+
+	$: {
+		if (isCorrect && !previousCorrect) {
+			playSuccessSound();
+		}
+		previousCorrect = isCorrect;
+	}
 </script>
 
 <div class="p-3 md:p-6">
